@@ -43,7 +43,7 @@ public class ClienteService {
                 .flatMap(cliente -> repository.delete(cliente)
                         .doOnNext(chave -> log.info("Excluindo: " + chave)));
 
-\
+
     }
 
 
