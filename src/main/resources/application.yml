@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: demomogodbreactive
+  data:
+    mongodb:
+      uri: mongodb://mongo:27017/clientesdb
+
+server:
+  port: 8080
+
+logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+

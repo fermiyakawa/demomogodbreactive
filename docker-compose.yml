@@ -1,0 +1,25 @@
+
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: clientesdb
+
+  app:
+    build: .
+    container_name: spring-webflux-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+
+volumes:
+  mongo-data:
